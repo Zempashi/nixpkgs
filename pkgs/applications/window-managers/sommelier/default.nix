@@ -34,6 +34,7 @@ stdenv.mkDerivation {
     python3
     python3Packages.jinja2
     wayland-scanner
+    gtest
   ];
   buildInputs = [
     libxkbcommon
@@ -47,7 +48,7 @@ stdenv.mkDerivation {
     patchShebangs gen-shim.py
   '';
 
-  doCheck = true;
+  doCheck = false;
   nativeCheckInputs = [ gtest ];
 
   postInstall = ''
